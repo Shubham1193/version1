@@ -1,11 +1,19 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
+import { createStackNavigator } from '@react-navigation/stack';
+import Signupuserdata from './Signupuserdata';
+import Signuppreferdata from './Signuppreferdata';
+import Signupfilterdata from './Signupfilterdata';
+
+const Stack = createStackNavigator();
 
 const Signup = () => {
   return (
-    <View style={styles.container}>
-      <Text style={styles.text}>Hello from Flashscreen</Text>
-    </View>
+    <Stack.Navigator>
+      <Stack.Screen name="userdata" component={Signupuserdata} />
+      <Stack.Screen name="preferdata" component={Signuppreferdata} />
+      <Stack.Screen name="filterdata" component={Signupfilterdata} />
+    </Stack.Navigator>
   );
 };
 
